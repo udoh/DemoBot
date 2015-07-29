@@ -43,6 +43,8 @@
 		4C1D01181B671D4500430A1D /* DemoBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1D011D1B671D4500430A1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1D011E1B671D4500430A1D /* DemoBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBotTests.swift; sourceTree = "<group>"; };
+		4C272E161B68B7C000F059ED /* DemoBot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoBot-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C272E1A1B68B7E800F059ED /* DemoBotTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoBotTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		93641D59120ABA754FE26483 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				4C1D01111B671D4500430A1D /* LaunchScreen.xib */,
 				4C1D01051B671D4500430A1D /* DemoBot.xcdatamodeld */,
 				4C1D01011B671D4500430A1D /* Supporting Files */,
+				4C272E161B68B7C000F059ED /* DemoBot-Bridging-Header.h */,
 			);
 			path = DemoBot;
 			sourceTree = "<group>";
@@ -113,6 +116,7 @@
 			children = (
 				4C1D011E1B671D4500430A1D /* DemoBotTests.swift */,
 				4C1D011C1B671D4500430A1D /* Supporting Files */,
+				4C272E1A1B68B7E800F059ED /* DemoBotTests-Bridging-Header.h */,
 			);
 			path = DemoBotTests;
 			sourceTree = "<group>";
@@ -408,10 +412,13 @@
 			baseConfigurationReference = 3A16055B93A6F7593177B446 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DemoBot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoBot/DemoBot-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -420,17 +427,21 @@
 			baseConfigurationReference = 93641D59120ABA754FE26483 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DemoBot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoBot/DemoBot-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		4C1D01261B671D4500430A1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A16055B93A6F7593177B446 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -442,14 +453,18 @@
 				INFOPLIST_FILE = DemoBotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoBotTests/DemoBotTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoBot.app/DemoBot";
 			};
 			name = Debug;
 		};
 		4C1D01271B671D4500430A1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93641D59120ABA754FE26483 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -457,6 +472,7 @@
 				INFOPLIST_FILE = DemoBotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoBotTests/DemoBotTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoBot.app/DemoBot";
 			};
 			name = Release;

@@ -24,6 +24,15 @@ class DemoBotTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
+        
+        let baseUrl = NSURL(string: "http://www.apple.com")
+        let manager = AFHTTPSessionManager(baseURL: baseUrl, sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        
+        manager.GET("test", parameters: nil, success: { (task, response) -> Void in
+            //
+        }) { (task, error) -> Void in
+            XCTAssertNotNil(error, "Error must be not nil")
+        }
     }
     
     func testPerformanceExample() {
